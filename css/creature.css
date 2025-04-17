@@ -1,0 +1,13 @@
+div#creature {
+    display: inherit;
+    justify-content: center;
+    padding:  calc(var(--general-padding) * 4);
+    margin: var(--general-margin);
+}
+
+div#creature img {
+    height: var(--creature-max-height);
+    width: var(--creature-max-width);
+    object-fit: contain;
+    image-rendering: pixelated;
+}

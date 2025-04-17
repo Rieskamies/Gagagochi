@@ -1,0 +1,28 @@
+:root {
+    --main-background-color: #292418;
+    --light-background-color:  #524839;
+    --general-padding: 2em;
+    --general-margin: 1em;
+    --creature-max-height: 10em;
+    --creature-max-width: 10em;
+    background-color: var(--main-background-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+*,*::before,*::after {
+    box-sizing: border-box;
+    
+}
+
+div#main {
+    display: flex;
+    flex-direction: column;
+}
+
