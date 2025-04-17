@@ -1,0 +1,39 @@
+ /* ______________TOP NAV_____________________*/
+
+nav#topNav {
+    display: inherit;
+    align-items: left;
+    height: 20px;
+    background-color:  var(--light-background-color);
+}
+
+    nav#topNav ul {
+        padding-left: var(--general-padding) ;
+        width:100%;
+    }
+
+    nav#topNav li {
+        display: inline;
+        width: 5em;
+        margin-right: var(--general-margin);
+    }
+
+    /* ______________BOTTOM NAV_____________________*/
+nav#bottomNav {
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+
+}
+
+    nav#bottomNav ul {
+        /*Leaving this here for now*/
+    }
+
+    nav#bottomNav li {
+        display: inline-block;
+        text-align: center;
+        width: 5em;
+        background-color:  var(--light-background-color);
+    }
