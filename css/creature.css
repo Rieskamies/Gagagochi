@@ -1,8 +1,13 @@
 div#creature {
-    display: inherit;
+    flex-grow: 1;
+    display: flex;
     justify-content: center;
-    padding:  calc(var(--general-padding) * 4);
+    padding: calc(var(--general-padding) * 4);
     margin: var(--general-margin);
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 div#creature img {

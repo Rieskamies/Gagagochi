@@ -12,25 +12,34 @@
     <body>
         <div id="main">
             <nav id="topNav">
-                <ul>
+                <ul class="ul-left">
                     <li>Gagagochi Rieskamies, 2025</li>
-                    <li>GitHub</li>
-                    <li class="spacer"></li>
+                    <li><a href="https://github.com/Rieskamies/Gagagochi">GitHub</a></li>
                 </ul>
+
+                <ul class="ul-right">
+                    <li class="hunger"><b>Hunger:</b><p>100</p></li>
+                    <li class="fun"><b>Fun:</b><p>0</p></li>
+                    <li class="tiredness"><b>Energy:</b><p>0</p></li>
+                    <li class="dirtiness"><b>Cleanliness:</b><p>0</p></li>
+                    <li class="healthy"><b><p>Healthy</p></b></li>
+                </ul>
+               
             </nav>
             
             <div id="creature">
-                <img src="./images/idle.png"/>
+                <img src="./images/idle.gif"/>
             </div>
 
 
             <nav id="bottomNav">
                 <ul>
-                    <li>Feed</li>
-                    <li>Play</li>
-                    <li>Rest</li>
-                    <li>Bathe</li>
-                    <li>Cure</li>
+                    <li class="action">Feed</li>     <!--Action reference in JS: 0 -->   
+                    <li class="action">Play</li>      <!--Action reference in JS: 1 --> 
+                    <li class="action">Rest</li>     <!--Action reference in JS: 2 --> 
+                    <li class="action">Bathe</li>  <!--Action reference in JS: 3--> 
+                    <li class="action">Cure</li>    <!--Action reference in JS: 4 --> 
+                    <li class="action">???</li>        <!--Action reference in JS: 5 --> 
                 </ul>
             </nav>
 
@@ -38,6 +47,7 @@
 
 
             <script src="./js/functions.js"></script>
+            <script src="./js/actions.js"></script>
         </div>
     </body>
 
