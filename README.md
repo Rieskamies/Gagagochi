@@ -20,3 +20,12 @@ Imitation of Tamagochi in JS
 - Added hunger logic (complete but needs some tweaking)
 - Added a functional feeding button to feed your friend
 - Made the site more flexible
+
+### 0.13
+- Added functions for all the stats to decrease
+- Updated feeding logic:
+    -  Feeding now gives a little bit of energy
+- Implemented a pressable "Play" button
+- Added a minigame for "Play"
+    -  Playing with the creature adds fun and decreases energy between 2 and 15
+- Made some sprites for action buttons
