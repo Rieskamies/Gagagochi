@@ -59,7 +59,11 @@ div#main #countdown p {
     font-size: 72px;
     display: block;
     text-align: center;
-    color: red;
+    font-family: sans-serif;
+    color: #fff;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 @media only screen and (max-width: 1200px) {
