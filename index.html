@@ -20,8 +20,8 @@
                 <ul class="ul-right">
                     <li class="hunger"><b>Hunger:</b><p>100</p></li>
                     <li class="fun"><b>Fun:</b><p>0</p></li>
-                    <li class="tiredness"><b>Energy:</b><p>0</p></li>
-                    <li class="dirtiness"><b>Cleanliness:</b><p>0</p></li>
+                    <li class="energy"><b>Energy:</b><p>0</p></li>
+                    <li class="cleanliness"><b>Cleanliness:</b><p>0</p></li>
                     <li class="healthy"><b><p>Healthy</p></b></li>
                 </ul>
                
@@ -34,20 +34,24 @@
 
             <nav id="bottomNav">
                 <ul>
-                    <li class="action">Feed</li>     <!--Action reference in JS: 0 -->   
-                    <li class="action">Play</li>      <!--Action reference in JS: 1 --> 
-                    <li class="action">Rest</li>     <!--Action reference in JS: 2 --> 
-                    <li class="action">Bathe</li>  <!--Action reference in JS: 3--> 
-                    <li class="action">Cure</li>    <!--Action reference in JS: 4 --> 
-                    <li class="action">???</li>        <!--Action reference in JS: 5 --> 
+                    <li class="action"><img src="images/feedBtn.png"/></li>     <!--Action reference in JS: 0 -->   
+                    <li class="action"><img src="images/playBtn.png"/></li></li>      <!--Action reference in JS: 1 --> 
+                    <li class="action"><img src="images/batheBtn.png"/></li></li>     <!--Action reference in JS: 2 --> 
+                    <li class="action"><img src="images/restBtn.png"/></li></li>  <!--Action reference in JS: 3--> 
+                    <li class="action"><img src="images/cureBtn.png"/></li></li>    <!--Action reference in JS: 4 --> 
+                    <!--<li class="action">???</li>        Action reference in JS: 5 --> 
                 </ul>
             </nav>
 
-
-
+            
+            
+                <div id="gameBox"><img src="./images/game1.png"/></div>
+               <div id="countdown"> <p></p></div>
+           
 
             <script src="./js/functions.js"></script>
             <script src="./js/actions.js"></script>
+            <script src="./js/minigame.js"></script>
         </div>
     </body>
 

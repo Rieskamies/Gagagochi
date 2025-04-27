@@ -34,8 +34,6 @@ nav#topNav {
 
 nav#bottomNav {
     flex-shrink: 0;
-	min-height: 50vh;
-	min-width: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,18 +54,13 @@ nav#bottomNav {
     nav#bottomNav li {
         display: inline-block;
         text-align: center;
-		font-size: 32px;
-        background-color:  var(--light-background-color);
         border-bottom: 2px black;
 		margin: var(--general-margin);
-		padding-left: calc(var(--general-padding)*2);
-		padding-right: calc(var(--general-padding)*2);
-		padding-top: 1em;
-		padding-bottom: 1em;
+
     }
 
-    nav#bottomNav .action:hover {
-        color: white;
+    nav#bottomNav .action img:hover {
+        transform: scale(1,0.9);
         cursor: pointer;
     }
 
