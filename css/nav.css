@@ -60,7 +60,7 @@ nav#bottomNav {
     }
 
     nav#bottomNav .action img:hover {
-        transform: scale(1,0.9);
+       /* transform: scale(1,0.9); */
         cursor: pointer;
     }
 

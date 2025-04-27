@@ -1,138 +1,156 @@
+//**************************************************
+//                    INITIAL SETUP
+//**************************************************
 
 // Starting stat levels (max 100)
-let hunger = 100;  
+let hunger = 100;
 let fun = 100;
 let energy = 100;
 let cleanliness = 100;
-let healthy = "Healthy"
+let healthy = "Healthy";
 
-const hungerElement = document.querySelector('.hunger p');  // Get the <p> element where hunger is displayed
-const funElement = document.querySelector('.fun p');  // Get the <p> element where fun is displayed
-const energyElement = document.querySelector('.energy p');  // Get the <p> element where energy is displayed
-const cleanlinessElement = document.querySelector('.cleanliness p');  // Get the <p> element where cleanliness is displayed
-const healthyElement = document.querySelector('.healthy p');  // Get the <p> element where healthiness is displayed
+const hungerElement = document.querySelector('.hunger p');
+const funElement = document.querySelector('.fun p');
+const energyElement = document.querySelector('.energy p');
+const cleanlinessElement = document.querySelector('.cleanliness p');
+const healthyElement = document.querySelector('.healthy p');
+const creatureImage = document.querySelector("#creature img");
 
+// Display initial stats
+hungerElement.textContent = hunger;
 funElement.textContent = fun;
 energyElement.textContent = energy;
 cleanlinessElement.textContent = cleanliness;
 healthyElement.textContent = healthy;
 
+// Utility - Random number between min and max
+const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+//**************************************************
+//                    ACTION FUNCTIONS
+//**************************************************
 
-//********************************************************** */
-
-//Function for generating random numbers between given values
-const getRandom = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min; // Adjusted random function to include max in range
+function resetGifAnimation(img, src) {
+    img.src = "";
+    void img.offsetWidth; 
+    img.src = src;
 }
 
-/**************************************************
-*
-*                                 ACTION  FUNCTIONS
-*
-**************************************************/
-
-//************************  FEED  ********************************** */
-
-// Function for what happens when you press the "Feed" button
+//************************************************************************* */
+// --------------------------------------Feed --------------------------------------------------------------------
 function feedAction(element) {
-    const creatureImage = document.querySelector("#creature img");
-    creatureImage.src = "./images/idle.png"; // Show action image
+    if (clicked) return;
+    clicked = true;
+    element.style.opacity = '50%';
 
-    setTimeout(function () {
-        creatureImage.src = "./images/idle.gif"; // Go back to idle after 2 sec
-        element.style.opacity = '100%'; // Show the action button again
+    resetGifAnimation(creatureImage, "./images/eat.gif");
 
-        clicked = false;  // Enable the action button
+    setTimeout(() => {
+        creatureImage.src = "./images/idle.gif";
+        element.style.opacity = '100%';
+        clicked = false;
 
-        if (hunger <= 100) {
-            hunger += getRandom(1, 25); // Add hunger by a random amount between 1 and 25
-            energy += 10;
-        } else {
-            hunger = 100; // Cap hunger at 100 if it's over 90
-        }
+        hunger += getRandom(1, 45);
+        energy += 10;
 
-        // Make sure hunger doesn't exceed 100
-        if (hunger > 100 || energy > 100) {
-            hunger = 100; 
-            energy = 100;
-        }
-     //   if (hunger > 20)     
-     //   hungerElement.style.color = "black";
-    //    hungerElement.textContent = hunger;
-    //    energyElement.textContent = energy;
-        
-        console.log("button is not clicked " + clicked)
-    }, 2000);
+        if (hunger > 100) hunger = 100;
+        if (energy > 100) energy = 100;
+
+        hungerElement.textContent = hunger;
+        energyElement.textContent = energy;
+    }, 2500); 
 }
 
+//************************************************************************* */
+// ------------------------------------- Bathe -----------------------------------------------------------------------
+function batheAction(element) {
+    if (clicked) return;
+    clicked = true;
+    element.style.opacity = '50%';
 
-/**************************************************
-*
-*                                 STAT  FUNCTIONS
-*
-**************************************************/
+    resetGifAnimation(creatureImage, "./images/bathe.gif");
 
+    const bathing = setInterval(() => {
+        if (cleanliness < 100) {
+            cleanliness += getRandom(1, 5);
+            cleanlinessElement.textContent = cleanliness;
+        }
+    }, 1000);
+
+    setTimeout(() => {
+        clearInterval(bathing);
+        creatureImage.src = "./images/idle.gif";
+        element.style.opacity = '100%';
+        clicked = false;
+    }, 15000);
+}
+
+//************************************************************************* */
+// ------------------------------------- Sleep -----------------------------------------------------------------------
+function sleepAction(element) {
+    if (clicked) return;
+    clicked = true;
+    element.style.opacity = '50%';
+
+    resetGifAnimation(creatureImage, "./images/sleep.gif");
+
+    const sleeping = setInterval(() => {
+        if (energy < 100) {
+            energy += getRandom(1, 10);
+            energyElement.textContent = energy;
+        }
+    }, 1000);
+
+    setTimeout(() => {
+        clearInterval(sleeping);
+        creatureImage.src = "./images/idle.gif";
+        element.style.opacity = '100%';
+        clicked = false;
+    }, 10000);
+}
+
+//**************************************************
+//                    STAT DECREASE
+//**************************************************
 
 function decreaseHunger() {
     if (hunger > 0) {
-        hunger -= getRandom(1, 4); // Decrease hunger by a random amount between 1 and 5
-        hungerElement.textContent = hunger; //Update hunger
-        console.log(`Hunger: ${hunger}`); // Show the current hunger level
+        hunger -= getRandom(1, 4);
+        hungerElement.textContent = hunger;
     }
-
-    let randomDelay = getRandom(5000, 10000);      // Generate a random delay between 1300ms and 15000ms for the next decrease
-
-    setTimeout(decreaseHunger, randomDelay);       // Schedule the decreaseHunger function to run again after the random delay
+    setTimeout(decreaseHunger, getRandom(5000, 10000));
 }
 
 function decreaseEnergy() {
     if (energy > 0) {
         energy -= getRandom(1, 2);
         energyElement.textContent = energy;
-        console.log(`Energy: ${energy}`);
     }
-    let randomDelay = getRandom(6000, 12000);
-    setTimeout(decreaseEnergy, randomDelay);
+    setTimeout(decreaseEnergy, getRandom(6000, 12000));
 }
 
 function decreaseFun() {
     if (fun > 0) {
         fun -= getRandom(2, 5);
         funElement.textContent = fun;
-        console.log(`Fun: ${fun}`);
     }
-    let randomDelay = getRandom(4000, 8000);
-    setTimeout(decreaseFun, randomDelay);
+    setTimeout(decreaseFun, getRandom(4000, 8000));
 }
 
 function decreaseCleanliness() {
     if (cleanliness > 0) {
         cleanliness -= getRandom(1, 3);
         cleanlinessElement.textContent = cleanliness;
-        console.log(`Cleanliness: ${cleanliness}`);
     }
-    let randomDelay = getRandom(7000, 15000);
-    setTimeout(decreaseCleanliness, randomDelay);
+    setTimeout(decreaseCleanliness, getRandom(7000, 15000));
 }
 
+// Start stat decrease loops
 decreaseHunger();
 decreaseEnergy();
 decreaseFun();
 decreaseCleanliness();
 
-//*********************     CODE MEMORIAL    ************************************* */
-/*
-// 
-           if (healthy === "Healthy") {
-            healthyElement.textContent = "Healthy"
-            healthyElement.style.color = "green";
-        }
-        
-        if (hunger < 50 && fun < 35 && energy < 25 || cleanliness < 10) {
-            healthyElement.textContent = "Sick"
-            healthyElement.style.color = "red";
-        }
-
-*/
-//******************************************************************************* */
+//**************************************************
+//                    END
+//**************************************************
