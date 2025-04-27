@@ -29,3 +29,6 @@ Imitation of Tamagochi in JS
 - Added a minigame for "Play"
     -  Playing with the creature adds fun and decreases energy between 2 and 15
 - Made some sprites for action buttons
+
+### 0.23
+- Added an animation for bathing

@@ -52,6 +52,7 @@ function playAction(element) {
                         if (fun <= 100) {
                             fun += getRandom(10, 40); // Add hunger by a random amount between 1 and 40
                             energy -= getRandom(2,15);
+                            cleanliness -= getRandom(3,12);
                         } 
                         if (fun > 100) {
                             fun = 100;
