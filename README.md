@@ -21,7 +21,7 @@ Imitation of Tamagochi in JS
 - Added a functional feeding button to feed your friend
 - Made the site more flexible
 
-### 0.13
+### 0.22
 - Added functions for all the stats to decrease
 - Updated feeding logic:
     -  Feeding now gives a little bit of energy
