@@ -240,7 +240,6 @@ const checkInterval = setInterval(() => {
 
     function checkStats() {
         if (hunger <= 0 && energy <= 0) {
-            console.log("dead");
             hunger = 0;
             hungerElement.textContent = 0;
             localStorage.setItem('hunger',hunger);
@@ -267,7 +266,7 @@ const checkInterval = setInterval(() => {
                 healthyElement.style.color = "red";
                 localStorage.setItem('healthy','Sick')
             } else {
-                console.log("It didn't happen.");
+                console.log("Rollin..");
             }
         }
     }
