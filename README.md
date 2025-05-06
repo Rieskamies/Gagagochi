@@ -5,6 +5,8 @@ Imitation of Tamagochi in JS
 In this game, you can take care of your lovely pet! 
 Feed, play, bathe and sleep all in one, amazing.
 
+You can try it out here: https://rieskamies.github.io/Gagagochi/ 
+
 ___
 
 # Update log
