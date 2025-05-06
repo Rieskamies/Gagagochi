@@ -33,10 +33,10 @@ function playAction(element) {
                 let randomY =  Math.floor(Math.random()*windowHeight);
 
                 ImageNumber = getRandom(1, 3);
-                countdown.style.display = "none"; // hide text so it doesnt interfere
+                countdown.style.display = "none"; // Hide text so it does not interfere
 
                 box.style.display = "block";
-                box.style.position = "fixed";  // just in case you need this too
+                box.style.position = "fixed"; 
                 box.style.top = randomY + "px";
                 box.style.left = randomX + "px";
                 box.src = "./images/game" + ImageNumber + ".png";
@@ -51,7 +51,11 @@ function playAction(element) {
 
 
                         if (fun <= 100) {
-                            fun += getRandom(10, 25); // Add fun by a random amount between 1 and 40
+                            
+                            if (fun <= 0) {
+                                fun = 0;
+                            }
+                            fun += getRandom(10, 35); // Add fun by a random amount between 1 and 40
                             energy -= getRandom(2,15);
                             cleanliness -= getRandom(3,12);
                             hunger -= getRandom(5,15);

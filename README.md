@@ -2,18 +2,26 @@
 
 Imitation of Tamagochi in JS
 
+In this game, you can take care of your lovely pet! 
+Feed, play, bathe and sleep all in one, amazing.
 
-## Update log
+___
 
-### 0.01
+# Update log
+
+## 0.01
 
 - Added file/folder structure
 
-### 0.02
+___
+
+## 0.02
 
 - Added base HTML and CSS
 
-### 0.12
+___
+
+## 0.12
 
 - Added idle animation for the creature
 - Added JS for actions and functions
@@ -21,7 +29,9 @@ Imitation of Tamagochi in JS
 - Added a functional feeding button to feed your friend
 - Made the site more flexible
 
-### 0.22
+___
+
+## 0.22
 
 #### Majorish things
 
@@ -36,10 +46,14 @@ Imitation of Tamagochi in JS
 
 - Made some sprites for action buttons
 
-### 0.23
+___
+
+## 0.23
 - Added an animation for bathing
 
-### 0.33
+___
+
+## 0.33
 
 #### Majorish things
 
@@ -55,3 +69,28 @@ Imitation of Tamagochi in JS
 - Minigame's "box" now appears on a random location based on viewport height and width
 - Cleaned up functions.js a bit
 - Fixed some bugs
+
+___
+
+## 0.43
+
+### Majorish things
+
+- Added a start screen where you get to name your creature
+    - Name must not be empty and the player cannot continue if it is
+    - Player cannot manually go to the game if name is empty
+- Made the site more responsive
+- Added a reset button to start your run over
+- The game now ends when hunger and energy reaches 0 and you are sent back to the naming screen
+- There's now a 1 in 15 chance for your creature to get sick!
+
+### Minor things
+- Added a label for your pet's name
+- Hunger, energy etc. are now initialized if naming was successful
+- Hunger, energy etc. are now saved to localStorage
+- Stats cannot go over 100 anymore
+- Creature will get "sick" status if cleanliness under 10
+    - Therefore a button to cure has been added
+    - Added a custom cursor for curing
+- Buttons are now unclickable/disabled when stats are over certain thresholds
+- Limited the maximum lenght of the creature's name
