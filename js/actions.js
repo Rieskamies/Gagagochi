@@ -20,7 +20,7 @@ actions.forEach((item, index) => {
         } else {
             item.style.opacity = '0.2';
             feedAction(item);
-            console.log("button is clicked " + clicked);
+
         }
     }
 
@@ -37,7 +37,7 @@ actions.forEach((item, index) => {
         } else {
             item.style.opacity = '0.2';
             playAction(item);
-            console.log("button is clicked " + clicked);
+
         }
     }
 
@@ -54,7 +54,7 @@ actions.forEach((item, index) => {
           } else {
               item.style.opacity = '0.2';
               batheAction(item);
-              console.log("button is clicked " + clicked);
+
           }
       }
 
@@ -71,7 +71,7 @@ actions.forEach((item, index) => {
             } else {
                 item.style.opacity = '0.2';
                 sleepAction(item);
-                console.log("button is clicked " + clicked);
+
             }
         }
 
@@ -88,7 +88,7 @@ actions.forEach((item, index) => {
             } else {
                 item.style.opacity = '0.2';
                 cureAction(item);
-                console.log("button is clicked " + clicked);
+
             }
         }
   });
